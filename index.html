@@ -62,6 +62,24 @@
     </div>
     <!-- END QR CODE READER -->
 
+    <!-- Embed an iframe -->
+    <!-- ... your existing HTML content ... -->
+
+    <iframe
+      id="qrContent"
+      style="
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      "
+    ></iframe>
+
+    <!-- ... rest of your HTML content ... -->
+
     <!-- FORM -->
     <div class="container">
       <div class="search-container">
@@ -75,6 +93,9 @@
       </div>
     </div>
     <!-- END FORM -->
+
+    <!-- Your existing HTML content -->
+    <!-- ... -->
 
     <!-- ID card container -->
     <!--<div class="id-card">

@@ -174,14 +174,20 @@ const scanner = new Html5QrcodeScanner("reader", {
 scanner.render(success, error);
 
 function success(result) {
-  // Navigate to the URL provided by the QR code
-  window.location.href = result;
+  // Set the URL of the iframe to the scanned URL
+  const iframe = document.getElementById("qrContent");
+  iframe.src = result;
+  iframe.style.display = "block";
 
-  // After 5 seconds, redirect the user back to the main page
-  // (assuming the main page URL is 'index.html')
+  // Hide other main content elements on the page, if necessary
+  // For example: document.getElementById("mainContent").style.display = "none";
+
+  // After 5 seconds, hide the iframe and show the main content
   setTimeout(() => {
-    window.location.href = "index.html";
-  }, 5000);
+    iframe.style.display = "none";
+    // Show the main content elements again
+    // For example: document.getElementById("mainContent").style.display = "block";
+  }, 6000);
 }
 
 function error(err) {
