@@ -161,8 +161,6 @@ function error(err) {
 
 // QR CODE END
 
-// QR CODE READER
-
 const scanner = new Html5QrcodeScanner("reader", {
   qrbox: {
     width: 150,
@@ -182,12 +180,10 @@ function success(result) {
   // Hide other main content elements on the page, if necessary
   // For example: document.getElementById("mainContent").style.display = "none";
 
-  // After 5 seconds, hide the iframe and show the main content
+  // After 5 seconds, redirect back to the main page
   setTimeout(() => {
-    iframe.style.display = "none";
-    // Show the main content elements again
-    // For example: document.getElementById("mainContent").style.display = "block";
-  }, 6000);
+    window.location.href = "https://moisessanchez2020.github.io/store";
+  }, 5000);
 }
 
 function error(err) {
